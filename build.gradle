@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group = 'jn.willfrydev'
+version = '1.0.0'
+description = 'Elimina los mensajes de chat no seguro de las versiones 1.19+'
+sourceCompatibility = 17
+targetCompatibility = 17
+repositories {
+    mavenCentral()
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+    maven { url = 'https://repo.dmulloy2.net/repository/public/' }
+}
+
+dependencies {
+
+    compileOnly 'io.papermc.paper:paper-api:1.19.1-R0.1-SNAPSHOT'
+    compileOnly 'net.dmulloy2:ProtocolLib:5.4.0'
+}
+
+shadowJar {
+
+    archiveBaseName.set("xNoInsecureChat")
+    archiveClassifier.set('')
+    archiveVersion.set(project.version)
+}
+
+tasks.build.dependsOn(shadowJar)

@@ -1,0 +1,13 @@
+name: xNoInsecureChat2
+version: ${project.version}
+author: xPlugins x WillfryDev
+main: jn.willfrydev.noinsecurechat.xNoInsecureChat
+api-version: 1.19
+depend: [ProtocolLib]
+
+commands:
+  noinsecurechat:
+    description: Recarga la configuración del plugin xNoInsecureChat.
+    aliases: [nic, nochatsecurity]
+    permission: noinsecurechat.reload
+    usage: /<command> reload
